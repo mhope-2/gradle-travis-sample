@@ -19,8 +19,8 @@ public class ClientRegisterTest {
 
 
         // create an a/c manager
-        AccountManager c2 = new AccountManager("C2 Account Manager Name");
-        AccountManager c3 = new AccountManager("C3 Account Manager Name");
+        AccountManager c2 = new AccountManager("Salim Inc.");
+        AccountManager c3 = new AccountManager("Jay Corp.");
 
         List<Client> clientList = new ArrayList<>(
                 Arrays.asList(
@@ -36,8 +36,8 @@ public class ClientRegisterTest {
         ClientRegister clientRegister = new ClientRegister(clientList);
 
         assertEquals(clientRegister.getClients(), Arrays.asList(
-                "C1", "C2 Account Manager Name",
-                "C3 Account Manager Name", "C4"
+                "C1", "Salim Inc.",
+                "Jay Corp.", "C4"
         ));
 
     }
@@ -46,8 +46,8 @@ public class ClientRegisterTest {
     public void testGetGoldClients(){
 
         // create an a/c manager
-        AccountManager c2 = new AccountManager("C2 Account Manager Name");
-        AccountManager c3 = new AccountManager("C3 Account Manager Name");
+        AccountManager c2 = new AccountManager("Salim Inc.");
+        AccountManager c3 = new AccountManager("Jay Corp.");
 
         List<Client> clientList = new ArrayList<>(
                 Arrays.asList(
@@ -63,15 +63,15 @@ public class ClientRegisterTest {
         ClientRegister clientRegister = new ClientRegister(clientList);
 
         assertEquals(clientRegister.getGoldClients(), Arrays.asList(
-                "C1", "C3 Account Manager Name"
+                "C1", "Jay Corp."
         ));
     }
 
     @Test
     public void getClientNameById(){
         // create an a/c manager
-        AccountManager c2 = new AccountManager("C2 Account Manager Name");
-        AccountManager c3 = new AccountManager("C3 Account Manager Name");
+        AccountManager c2 = new AccountManager("Salim Inc.");
+        AccountManager c3 = new AccountManager("Jay Corp.");
 
         List<Client> clientList = new ArrayList<>(
                 Arrays.asList(
@@ -91,8 +91,8 @@ public class ClientRegisterTest {
     @Test
     public void testCountClientsAtAllLevels(){
         // create an a/c manager
-        AccountManager c2 = new AccountManager("C2 Account Manager Name");
-        AccountManager c3 = new AccountManager("C3 Account Manager Name");
+        AccountManager c2 = new AccountManager("Salim Inc.");
+        AccountManager c3 = new AccountManager("Jay Corp.");
 
         List<Client> clientList = new ArrayList<>(
                 Arrays.asList(
