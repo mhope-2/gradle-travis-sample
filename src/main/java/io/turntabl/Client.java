@@ -24,4 +24,16 @@ public abstract class Client {
     public String getName() {
         return name;
     }
+
+    public ClientType getType() {
+        return type;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public Level getServiceLevel() {
+        return serviceLevel;
+    }
 }

@@ -1,6 +1,8 @@
 package io.turntabl;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class ClientRegister {
@@ -16,4 +18,26 @@ public class ClientRegister {
                 .map(Client::getName)
                 .collect(Collectors.toList());
     }
+
+    public List<String> getGoldClients(){
+        return this.clients.stream()
+                .filter(client -> client.getServiceLevel().equals(Level.GOLD))
+                .map(Client::getName)
+                .collect(Collectors.toList());
+    }
+
+    public Optional<String> getClientNameById(String id){
+
+        return this.clients.stream()
+                .filter(client -> client.getID().equals(id))
+                .map(Client::getName)
+                .findFirst();
+
+    }
+
+    public Map<Level, Long> countClientsAtAllLevels(){
+        return this.clients.stream()
+                .collect(Collectors.groupingBy(Client::getServiceLevel, Collectors.counting()));
+    }
+
 }
